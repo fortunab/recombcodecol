@@ -85,6 +85,12 @@ end = time.time()
 t1 = end-start
 print(t1)
 
+# fit the keras model on the dataset
+model.fit(X, y, epochs=5, batch_size=70)
+# evaluate the keras model
+_, accuracy = model.evaluate(X, y)
+print('Accuracy: %.2f' % (accuracy*100))
+
 """Calculations"""
 
 from sklearn.metrics import confusion_matrix
